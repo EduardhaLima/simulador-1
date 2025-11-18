@@ -593,4 +593,10 @@ const dadosDeRepasse = [
     data: "31/01/2024",
     valor: 5100.00,
     status: "sucesso"
-}]
+}];
+
+//História de Usuário 1: Recebimento e Exibição de Dados do Governo 
+const totalDeRepasses = dadosDeRepasse.length;
+console.log(`O total de repasses processados é igual a: ${totalDeRepasses}.`);
+
+//História de Usuário 2: Análise de Transações por status
