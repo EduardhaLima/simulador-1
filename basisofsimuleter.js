@@ -493,8 +493,10 @@ const dadosDeRepasse = [
     motivo: "Erro humano"
 },
 {
-\"orgao\": \"Polícia Militar\",\n \"data\": \"16/01/2024\",\n
-\"valor\": 5000.00,\n \"status\": \"sucesso\"\n },\n {\n
+    orgao: "Polícia Militar",
+    data: "16/01/2024",
+    valor: 5000.00,
+    status: "sucesso\"\n },\n {\n
 \"orgao\": \"Corpo de Bombeiros\",\n \"data\": \"17/01/2024\",\n
 \"valor\": 7500.00,\n \"status\": \"sucesso\"\n },\n {\n
 \"orgao\": \"Guarda Municipal\",\n \"data\": \"18/01/2024\",\n
