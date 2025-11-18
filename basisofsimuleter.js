@@ -73,7 +73,7 @@ const dadosDeRepasse = [
     orgao: "Anvisa",
     data: "12/01/2024",
     valor: 6000.00,
-    status: sucesso
+    status: "sucesso"
 },
 {
     orgao: "Inmetro",
@@ -252,91 +252,247 @@ const dadosDeRepasse = [
     orgao: "Polícia Federal",
     data: "09/01/2024",
     valor: 6700.00,
-    status: "falha\",\n \"motivo\": \"Problemas técnicos\"\n },\n {\n
-\"orgao\": \"Ibama\",\n \"data\": \"10/01/2024\",\n \"valor\":
-5700.00,\n \"status\": \"sucesso\"\n },\n {\n \n\n
-\"orgao\": \"Anvisa\",\n \"data\": \"11/01/2024\",\n
-\"valor\": 6200.00,\n \"status\": \"sucesso\"\n },\n {\n
-\"orgao\": \"Inmetro\",\n \"data\": \"12/01/2024\",\n
-\"valor\": 3200.00,\n \"status\": \"falha\",\n \"motivo\":
-\"Dados incorretos\"\n },\n {\n \"orgao\": \"Cetesb\",\n
-\"data\": \"13/01/2024\",\n \"valor\": 7200.00,\n \"status\":
-\"sucesso\"\n },\n {\n \"orgao\": \"Susep\",\n \"data\":
-\"14/01/2024\",\n \"valor\": 8200.00,\n \"status\":
-\"falha\",\n \"motivo\": \"Problemas técnicos\"\n },\n {\n
-\"orgao\": \"Polícia Civil\",\n \"data\": \"15/01/2024\",\n
-\"valor\": 5400.00,\n \"status\": \"sucesso\"\n },\n {\n
-\"orgao\": \"Polícia Rodoviária Federal\",\n \"data\":
-\"16/01/2024\",\n \"valor\": 6300.00,\n \"status\":
-\"falha\",\n \"motivo\": \"Erro humano\"\n },\n {\n
-\"orgao\": \"Polícia Militar\",\n \"data\": \"17/01/2024\",\n
-\"valor\": 4800.00,\n \"status\": \"sucesso\"\n },\n {\n
-\"orgao\": \"Corpo de Bombeiros\",\n \"data\": \"18/01/2024\",\n
-\"valor\": 7300.00,\n \"status\": \"sucesso\"\n },\n {\n
-\"orgao\": \"Guarda Municipal\",\n \"data\": \"19/01/2024\",\n
-\"valor\": 3800.00,\n \"status\": \"falha\",\n \"motivo\":
-\"Sistema fora do ar\"\n },\n {\n \"orgao\": \"Receita
-Federal\",\n \"data\": \"20/01/2024\",\n \"valor\": 8300.00,\n
-\"status\": \"sucesso\"\n },\n {\n \"orgao\": \"Ministério
-Público\",\n \"data\": \"21/01/2024\",\n \"valor\": 9300.00,\n
-\"status\": \"falha\",\n \"motivo\": \"Recursos insuficientes\"\n
-},\n {\n \"orgao\": \"Defesa Civil\",\n \"data\":
-\"22/01/2024\",\n \"valor\": 4300.00,\n \"status\":
-\"sucesso\"\n },\n {\n \"orgao\": \"Detran\",\n \"data\":
-\"23/01/2024\",\n \"valor\": 5300.00,\n \"status\":
-\"sucesso\"\n },\n {\n \"orgao\": \"Polícia Federal\",\n
-\"data\": \"24/01/2024\",\n \"valor\": 6800.00,\n \"status\":
-\"falha\",\n \"motivo\": \"Problemas técnicos\"\n },\n {\n
-\"orgao\": \"Ibama\",\n \"data\": \"25/01/2024\",\n \"valor\":
-5800.00,\n \"status\": \"sucesso\"\n },\n {\n \"orgao\":
-\"Anvisa\",\n \"data\": \"26/01/2024\",\n \"valor\":
-6300.00,\n \"status\": \"sucesso\"\n },\n {\n \"orgao\":
-\"Inmetro\",\n \"data\": \"27/01/2024\",\n \"valor\":
-3300.00,\n \"status\": \"falha\",\n \"motivo\": \"Dados
-incorretos\"\n },\n {\n \"orgao\": \"Cetesb\",\n \"data\":
-\"28/01/2024\",\n \"valor\": 7300.00,\n \"status\":
-\"sucesso\"\n },\n {\n \"orgao\": \"Susep\",\n \"data\":
-\"29/01/2024\",\n \"valor\": 8300.00,\n \"status\":
-\"falha\",\n \"motivo\": \"Problemas técnicos\"\n },\n {\n
-\"orgao\": \"Polícia Civil\",\n \"data\": \"30/01/2024\",\n
-\"valor\": 5500.00,\n \"status\": \"sucesso\"\n },\n {\n
-\"orgao\": \"Polícia Rodoviária Federal\",\n \"data\":
-\"31/01/2024\",\n \"valor\": 6400.00,\n \"status\":
-\"falha\",\n \"motivo\": \"Erro humano\"\n },\n {\n
-\"orgao\": \"Polícia Militar\",\n \"data\": \"01/01/2024\",\n
-\"valor\": 4900.00,\n \"status\": \"sucesso\"\n },\n {\n
-\"orgao\": \"Corpo de Bombeiros\",\n \"data\": \"02/01/2024\",\n
-\"valor\": 7400.00,\n \"status\": \"sucesso\"\n },\n {\n
-\"orgao\": \"Guarda Municipal\",\n \"data\": \"03/01/2024\",\n
-\"valor\": 3900.00,\n \"status\": \"falha\",\n \"motivo\":
-\"Sistema fora do ar\"\n },\n {\n \"orgao\": \"Receita
-Federal\",\n \"data\": \"04/01/2024\",\n \"valor\": 8400.00,\n
-\"status\": \"sucesso\"\n },\n {\n \"orgao\": \"Ministério
-Público\",\n \"data\": \"05/01/2024\",\n \"valor\": 9400.00,\n
-\"status\": \"falha\",\n \"motivo\": \"Recursos insuficientes\"\n
-},\n {\n \"orgao\": \"Defesa Civil\",\n \"data\":
-\"06/01/2024\",\n \"valor\": 4400.00,\n \"status\":
-\"sucesso\"\n },\n {\n \"orgao\": \"Detran\",\n \"data\":
-\"07/01/2024\",\n \"valor\": 5400.00,\n \"status\":
-\"sucesso\"\n },\n {\n \"orgao\": \"Polícia Federal\",\n
-\"data\": \"08/01/2024\",\n \"valor\": 6900.00,\n \"status\":
-\"falha\",\n \"motivo\": \"Problemas técnicos\"\n },\n {\n
-\"orgao\": \"Ibama\",\n \"data\": \"09/01/2024\",\n \"valor\":
-5900.00,\n \"status\": \"sucesso\"\n },\n {\n \"orgao\":
-\"Anvisa\",\n \"data\": \"10/01/2024\",\n \"valor\":
-6400.00,\n \"status\": \"sucesso\"\n },\n {\n \"orgao\":
-\"Inmetro\",\n \"data\": \"11/01/2024\",\n \"valor\":
-3400.00,\n \"status\": \"falha\",\n \"motivo\": \"Dados
-incorretos\"\n },\n {\n \"orgao\": \"Cetesb\",\n \"data\":
-\"12/01/2024\",\n \"valor\": 7400.00,\n \"status\":
-\"sucesso\"\n },\n {\n \"orgao\": \"Susep\",\n \"data\":
-\"13/01/2024\",\n \"valor\": 8400.00,\n \"status\":
-\"falha\",\n \"motivo\": \"Problemas técnicos\"\n },\n {\n
-\"orgao\": \"Polícia Civil\",\n \"data\": \"14/01/2024\",\n
-\"valor\": 5600.00,\n \"status\": \"sucesso\"\n },\n {\n
-\"orgao\": \"Polícia Rodoviária Federal\",\n \"data\":
-\"15/01/2024\",\n \"valor\": 6500.00,\n \"status\":
-\"falha\",\n \"motivo\": \"Erro humano\"\n },\n {\n
+    status: "falha",
+    motivo: "Problemas técnicos"
+},
+{
+    orgao: "Ibama",
+    data: "10/01/2024",
+    valor: 5700.00,
+    status: "sucesso"
+},
+{
+    orgao: "Anvisa",
+    data: "11/01/2024",
+    valor: 6200.00,
+    status: "sucesso"
+},
+{
+    orgao: "Inmetro",
+    data: "12/01/2024",
+    valor: 3200.00,
+    status: "falha",
+    motivo: "Dados incorretos"
+},
+{
+    orgao: "Cetesb",
+    data: "13/01/2024",
+    valor: 7200.00,
+    status: "sucesso"
+},
+{
+    orgao: "Susep",
+    data: "14/01/2024",
+    valor: 8200.00,
+    status: "falha",
+    motivo: "Problemas técnicos"
+},
+{
+    orgao: "Polícia Civil",
+    data: "15/01/2024",
+    valor: 5400.00,
+    status: "sucesso"
+},
+{
+    orgao: "Polícia Rodoviária Federal",
+    data: "16/01/2024",
+    valor: 6300.00,
+    status: "falha",
+    motivo: "Erro humano"
+},
+{
+    orgao: "Polícia Militar",
+    data: "17/01/2024",
+    valor: 4800.00,
+    status: "sucesso"
+ },
+ {
+    orgao: "Corpo de Bombeiros",
+    data: "18/01/2024",
+    valor: 7300.00,
+    status: "sucesso"
+},
+{
+    orgao: "Guarda Municipal",
+    data: "19/01/2024",
+    valor: 3800.00,
+    status: "falha",
+    motivo: "Sistema fora do ar"
+},
+{
+    orgao: "Receita Federal",
+    data: "20/01/2024",
+    valor: 8300.00,
+    status: "sucesso"
+},
+{
+    orgao: "Ministério Público",
+    data: "21/01/2024",
+    valor: 9300.00,
+    status: "falha",
+    motivo: "Recursos insuficientes"
+},
+{
+    orgao: "Defesa Civil",
+    data: "22/01/2024",
+    valor: 4300.00,
+    status: "sucesso"
+},
+{
+    orgao: "Detran",
+    data: "23/01/2024",
+    valor: 5300.00,
+    status: "sucesso"
+},
+{
+    orgao: "Polícia Federal",
+    data: "24/01/2024",
+    valor: 6800.00,
+    status: "falha",
+    motivo: "Problemas técnicos"
+},
+{
+    orgao: "Ibama",
+    data: "25/01/2024",
+    valor: 5800.00,
+    status:"sucesso"
+},
+{
+    orgao: "Anvisa",
+    data: "26/01/2024",
+    valor: 6300.00,
+    status: "sucesso"
+},
+{
+    orgao: "Inmetro",
+    data: "27/01/2024",
+    valor: 3300.00,
+    status: "falha",
+    motivo: "Dados incorretos"
+},
+{
+    orgao: "Cetesb",
+    data: "28/01/2024",
+    valor: 7300.00,
+    status: "sucesso"
+},
+{
+    orgao: "Susep",
+    data: "29/01/2024",
+    valor: 8300.00,
+    status: "falha",
+    motivo: "Problemas técnicos"
+},
+{
+    orgao: "Polícia Civil", 
+    data: "30/01/2024",
+    valor: 5500.00,
+    status: "sucesso"
+},
+{
+    orgao: "Polícia Rodoviária Federal",
+    data: "31/01/2024",
+    valor: 6400.00,
+    status: "falha",
+    motivo: "Erro humano",
+},
+{
+    orgao: "Polícia Militar",
+    data: "01/01/2024",
+    valor: 4900.00,
+    status: "sucesso"
+},
+{
+    orgao: "Corpo de Bombeiros",
+    data: "02/01/2024",
+    valor: 7400.00,
+    status: "sucesso"
+},
+{
+    orgao: "Guarda Municipal",
+    data: "03/01/2024",
+    valor: 3900.00,
+    status: "falha",
+    motivo:"Sistema fora do ar"
+},
+{
+    orgao: "Receita Federal",
+    data: "04/01/2024",
+    valor: 8400.00,
+    status: "sucesso"
+},
+{
+    orgao: "Ministério Público",
+    data: "05/01/2024",
+    valor: 9400.00,
+    status: "falha",
+    motivo: "Recursos insuficientes"
+},
+{
+    orgao: "Defesa Civil",
+    data: "06/01/2024",
+    valor: 4400.00,
+    status: "sucesso"
+},
+{
+    orgao: "Detran",
+    data: "07/01/2024",
+    valor: 5400.00,
+    status: "sucesso"
+},
+{
+    orgao: "Polícia Federal",
+    data: "08/01/2024",
+    valor: 6900.00,
+    status: "falha",
+    motivo: "Problemas técnicos"
+},
+{
+    orgao: "Ibama",
+    data: "09/01/2024",
+    valor: 5900.00,
+    status: "sucesso"
+},
+{
+    orgao: "Anvisa",
+    data: "10/01/2024",
+    valor: 6400.00,
+    status: "sucesso"
+},
+{
+    orgao: "Inmetro",
+    data: "11/01/2024",
+    valor: 3400.00,
+    status: "falha",
+    motivo: "Dados incorretos"
+},
+{
+    orgao: "Cetesb",
+    data: "12/01/2024",
+    valor: 7400.00,
+    status: "sucesso"
+},
+{
+    orgao: "Susep",
+    data: "13/01/2024",
+    valor: 8400.00,
+    status: "falha",
+    motivo: "Problemas técnicos"
+},
+{
+    orgao: "Polícia Civil",
+    data: "14/01/2024",
+    valor: 5600.00,
+    status: "sucesso"
+},
+{ 
+    orgao: "Polícia Rodoviária Federal",
+    data: "15/01/2024",
+    valor: 6500.00, 
+    status: "falha",
+    motivo: "Erro humano"
+},
+{
 \"orgao\": \"Polícia Militar\",\n \"data\": \"16/01/2024\",\n
 \"valor\": 5000.00,\n \"status\": \"sucesso\"\n },\n {\n
 \"orgao\": \"Corpo de Bombeiros\",\n \"data\": \"17/01/2024\",\n
