@@ -599,7 +599,21 @@ const jsonString = JSON.stringify(dadosDeRepasse);
 console.log(jsonString);
 
 //História de Usuário 1: Recebimento e Exibição de Dados do Governo 
+console.log(`----------------------------------------------------------------`);
+console.log(`----------------------TOTAL DE REPASSES-------------------------`);
+console.log(`----------------------------------------------------------------`);
+
 const totalDeRepasses = dadosDeRepasse.length;
 console.log(`O total de repasses processados é igual a: ${totalDeRepasses}.`);
 
 //História de Usuário 2: Análise de Transações por status
+console.log(`----------------------------------------------------------------`);
+console.log(`------------------------BEM SUCEDIDOS---------------------------`);
+console.log(`----------------------------------------------------------------`);
+
+//a. Quantidade total de repasses bem sucedidos
+const totalDeRepassesfiltrados = dadosDeRepasse.filter(repasse => repasse.status == "sucesso")
+const totalDeRepassesBemSucedidos = totalDeRepassesfiltrados.length
+console.log(`O total de repasses processados bem sucedidos é igual a: ${totalDeRepassesBemSucedidos}`);
+//b. Quantidade total de repasses bem sucedidos por órgão
+
