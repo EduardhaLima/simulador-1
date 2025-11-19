@@ -49,3 +49,22 @@ console.log(`O valor total de repasses bem sucedidos é R$ ${valorTotal.toFixed(
 
 //d. Valor total de repasses bem sucedidos por órgão
 
+const valorTotalBemSucedido = repassesfiltrados.reduce((acumulador, repasse) => {
+
+    const chave = repasse.orgao;
+
+    if (!acumulador[chave]) {
+        acumulador[chave] = {
+            quantidade: 0,
+            valorTotalBemSucedido: 0.00
+        };
+    }
+     acumulador[chave].quantidade++;
+     acumulador[chave].valorTotalBemSucedido += repasse.valor;
+    
+     return acumulador;
+
+}, {}); 
+
+console.log(`Valor total de repasses bem sucedidos por órgão:`);
+console.log(valorTotalBemSucedido);
