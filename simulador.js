@@ -19,7 +19,25 @@ console.log(`------------------------BEM SUCEDIDOS---------------------------`);
 console.log(`----------------------------------------------------------------`);
 
 //a. Quantidade total de repasses bem sucedidos
-const totalDeRepassesfiltrados = objetoRepasses.filter(repasse => repasse.status == "sucesso")
-const totalDeRepassesBemSucedidos = totalDeRepassesfiltrados.length
-console.log(`O total de repasses processados bem sucedidos é igual a: ${totalDeRepassesBemSucedidos}`);
-//b. Quantidade total de repasses bem sucedidos por órgão
+const repassesfiltrados = objetoRepasses.filter(repasse => repasse.status == "sucesso")
+const repassesBemSucedidos = repassesfiltrados.length
+console.log(`O total de repasses processados bem sucedidos é igual a: ${repassesBemSucedidos}`);
+
+//b. Quantidade total de repasses bem sucedidos por órgão 
+const contagemPorOrgao = repassesfiltrados.reduce((acumulador, repasse) => { 
+    const nomeOrgao = repasse.orgao;
+
+    if (!(acumulador[nomeOrgao])){
+        acumulador[nomeOrgao] = 0;
+    }
+
+    acumulador[nomeOrgao]++;
+    
+    return acumulador;
+}, {}); 
+
+console.log(`Contagem de sucesso por orgão:`);
+console.log(contagemPorOrgao);
+
+//c. Valor total de repasses bem sucedidos
+
