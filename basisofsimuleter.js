@@ -595,6 +595,9 @@ const dadosDeRepasse = [
     status: "sucesso"
 }];
 
+const jsonString = JSON.stringify(dadosDeRepasse);
+console.log(jsonString);
+
 //História de Usuário 1: Recebimento e Exibição de Dados do Governo 
 const totalDeRepasses = dadosDeRepasse.length;
 console.log(`O total de repasses processados é igual a: ${totalDeRepasses}.`);
