@@ -92,3 +92,22 @@ const contagemPorOrgaoFalho = repassesfiltradosComFalhas.reduce((acumulador, rep
 
 console.log(`Contagem de falhas por orgão:`);
 console.log(contagemPorOrgaoFalho);
+
+//c. Quantidade total de repasses com falha por motivo
+const contagemPorFalhaMotivo = repassesfiltradosComFalhas.reduce((acumulador, repasse) => { 
+    const chave = `${repasse.orgao} (${repasse.motivo})`;
+
+   if (!acumulador[chave]) {
+    acumulador[chave] = {
+    quantidade: 0
+ 
+    };
+   }
+   acumulador[chave].quantidade++;
+
+   return acumulador;
+
+}, {}); 
+
+console.log(`quantidade total de repasses com falha por motivo:`)
+console.log(contagemPorFalhaMotivo);
