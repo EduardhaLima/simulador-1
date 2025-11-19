@@ -40,4 +40,12 @@ console.log(`Contagem de sucesso por orgão:`);
 console.log(contagemPorOrgao);
 
 //c. Valor total de repasses bem sucedidos
+const valorTotal = repassesfiltrados.reduce((acumulador, repasse) => {
+    
+    return acumulador + repasse.valor;
+
+}, 0);
+console.log(`O valor total de repasses bem sucedidos é R$ ${valorTotal.toFixed(2)}`)
+
+//d. Valor total de repasses bem sucedidos por órgão
 
