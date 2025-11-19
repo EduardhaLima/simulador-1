@@ -48,7 +48,6 @@ const valorTotal = repassesfiltrados.reduce((acumulador, repasse) => {
 console.log(`O valor total de repasses bem sucedidos é R$ ${valorTotal.toFixed(2)}`)
 
 //d. Valor total de repasses bem sucedidos por órgão
-
 const valorTotalBemSucedido = repassesfiltrados.reduce((acumulador, repasse) => {
 
     const chave = repasse.orgao;
@@ -68,3 +67,11 @@ const valorTotalBemSucedido = repassesfiltrados.reduce((acumulador, repasse) => 
 
 console.log(`Valor total de repasses bem sucedidos por órgão:`);
 console.log(valorTotalBemSucedido);
+
+console.log(`----------------------------------------------------------------`);
+console.log(`-------------------------COM FALHAS-----------------------------`);
+console.log(`----------------------------------------------------------------`);
+//a. Quantidade total de repasses com falha
+const repassesfiltradosComFalhas = objetoRepasses.filter(repasse => repasse.status == "falha")
+const repassesComFalha = repassesfiltradosComFalhas.length
+console.log(`O total de repasses processados com falhas é igual a: ${repassesComFalha}`);
