@@ -164,3 +164,119 @@ console.log(valorFalhaPorMotivo);
 
 console.log(`----------------------------------------------------------------`);
 //História de Usuário 3: Estatísticas de Repasses por critérios
+//a. Detalhes do repasse com maior valor
+const repasseComMaiorValor = objetoRepasses.reduce ((max, menor) => menor.valor > max.valor ? menor : max,repassesfiltrados [0]);
+    console.log("Repasse com maior valor:");
+    console.log(`   Órgão: ${repasseComMaiorValor.orgao}`);
+    console.log(`   Data: ${repasseComMaiorValor.data}`);
+    console.log(`   Valor: R$ ${repasseComMaiorValor.valor.toFixed(2)}`);
+    console.log(`   Status: ${repasseComMaiorValor.status}`);
+
+//b. Detalhes do repasse com menor valor
+const repasseComMenorValor = objetoRepasses.reduce ((max, menor) => menor.valor < max.valor ? menor : max,repassesfiltrados [0]);
+    console.log("Repasse com menor valor:");
+    console.log(`   Órgão: ${repasseComMenorValor.orgao}`);
+    console.log(`   Data: ${repasseComMenorValor.data}`);
+    console.log(`   Valor: R$ ${repasseComMenorValor.valor.toFixed(2)}`);
+    console.log(`   Status: ${repasseComMenorValor.status}`);
+
+//c. Dia com mais repasses    
+const contagemPorDia = objetoRepasses.reduce((mapa, repasse) => {
+    const data = repasse.data;
+    mapa.set(data, (mapa.get(data) || 0) + 1);
+    return mapa;
+}, new Map());
+
+const [diaMaisRepasses, maxRepasses] = Array.from(contagemPorDia.entries()).reduce(
+    (maxEntry, atualEntry) => {
+
+        return atualEntry[1] > maxEntry[1] ? atualEntry : maxEntry;
+    },
+    ['', 0] 
+);
+
+console.log(`Dia com mais repasses: ${diaMaisRepasses} (${maxRepasses} repasses)`);
+
+//d. Órgão com mais repasses
+const contagemPorOrgaoMap = objetoRepasses.reduce((mapa, repasse) => {
+    const orgao = repasse.orgao;
+    mapa.set(orgao, (mapa.get(orgao) || 0) + 1);
+    return mapa;
+}, new Map());
+
+const [orgaoMaisRepasses, maxRepassesOrgao] = Array.from(contagemPorOrgaoMap.entries()).reduce(
+    (maxEntry, atualEntry) => {
+
+        return atualEntry[1] > maxEntry[1] ? atualEntry : maxEntry;
+    },
+    ['', 0] 
+);
+
+console.log(`Orgão com mais repasses: ${orgaoMaisRepasses} (${maxRepassesOrgao} repasses)`);
+
+//e. Órgão com mais repasses com sucesso
+const contagemPorOrgaoSucessoMap = repassesfiltrados.reduce((mapa, repasse) => {
+    const orgao = repasse.orgao;
+    mapa.set(orgao, (mapa.get(orgao) || 0) + 1);
+    return mapa;
+}, new Map());
+
+const [orgaoMaisRepassesComSucesso, maxRepassesOrgaoComSucesso] = Array.from(contagemPorOrgaoSucessoMap.entries()).reduce(
+    (maxEntry, atualEntry) => {
+
+        return atualEntry[1] > maxEntry[1] ? atualEntry : maxEntry;
+    },
+    ['', 0] 
+);
+
+console.log(`Orgão com mais repasses bem sucedidos: ${orgaoMaisRepassesComSucesso} (${maxRepassesOrgaoComSucesso} repasses)`);
+
+//f. Órgão com mais repasses falhados
+const contagemPorOrgaoFalhaMap = repassesfiltradosComFalhas.reduce((mapa, repasse) => {
+    const orgao = repasse.orgao;
+    mapa.set(orgao, (mapa.get(orgao) || 0) + 1);
+    return mapa;
+}, new Map());
+
+const [orgaoMaisRepassesComFalha, maxRepassesOrgaoComFalha] = Array.from(contagemPorOrgaoFalhaMap.entries()).reduce(
+    (maxEntry, atualEntry) => {
+
+        return atualEntry[1] > maxEntry[1] ? atualEntry : maxEntry;
+    },
+    ['', 0] 
+);
+
+console.log(`Orgão com mais repasses com falha: ${orgaoMaisRepassesComFalha} (${maxRepassesOrgaoComFalha} repasses)`);
+
+//g. Motivo de falha com mais repasses
+function encontrarMotivoMaisComumComMap(dadosRepasse) {
+    const contagemPorMotivo = dadosRepasse
+        .filter(repasse => repasse.status === "falha" && repasse.motivo)
+        .reduce((mapa, repasse) => {
+            const motivo = repasse.motivo;
+            mapa.set(motivo, (mapa.get(motivo) || 0) + 1);
+            return mapa;
+        }, new Map()); 
+
+    const [motivoMaisComum, maxRepasses] = Array.from(contagemPorMotivo.entries()).reduce(
+        (maxEntry, atualEntry) => {
+            return atualEntry[1] > maxEntry[1] ? atualEntry : maxEntry;
+        },
+        ['', 0] 
+    );
+
+    console.log(`Motivo de falha com mais repasses: ${motivoMaisComum} (${maxRepasses} repasses)`);
+    console.log("");
+    
+    return { motivo: motivoMaisComum, contagem: maxRepasses };
+}
+
+const dadosRepasse = [
+    { status: "falha", motivo: "Problemas técnicos" },
+    { status: "falha", motivo: "Erro humano" },
+    { status: "falha", motivo: "Problemas técnicos" },
+    { status: "falha", motivo: "Documentação incompleta" },
+    { status: "falha", motivo: "Problemas técnicos" },
+];
+
+encontrarMotivoMaisComumComMap(dadosRepasse);
