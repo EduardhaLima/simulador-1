@@ -109,7 +109,58 @@ const contagemPorFalhaMotivo = repassesfiltradosComFalhas.reduce((acumulador, re
 
 }, {}); 
 
-console.log(`quantidade total de repasses com falha por motivo:`)
+console.log(`Quantidade total de repasses com falha por motivo:`)
 console.log(contagemPorFalhaMotivo);
 
 //d. Valortotal de repasses com falha
+const valorTotalComFalha = repassesfiltradosComFalhas.reduce((acumulador, repasse) => {
+    
+    return acumulador + repasse.valor;
+
+}, 0);
+console.log(`O valor total de repasses bem sucedidos é R$ ${valorTotalComFalha.toFixed(2)}`)
+
+//e. Valor total de repasses com falha por órgão
+const valorFalhaPorOrgao = repassesfiltrados.reduce((acumulador, repasse) => {
+
+    const chave = repasse.orgao;
+
+    if (!acumulador[chave]) {
+        acumulador[chave] = {
+            quantidade: 0,
+            valorFalhaPorOrgao: 0.00
+        };
+    }
+     acumulador[chave].quantidade++;
+     acumulador[chave].valorFalhaPorOrgao += repasse.valor;
+    
+     return acumulador;
+
+}, {}); 
+
+console.log(`Valor total de repasses por falha por órgão:`);
+console.log(valorFalhaPorOrgao);
+
+//f. Valor total de repasses com falha por motivo
+const valorFalhaPorMotivo = repassesfiltradosComFalhas.reduce((acumulador, repasse) => {
+
+    const chave = repasse.motivo 
+
+    if (!acumulador[chave]) {
+        acumulador[chave] = {
+            quantidade: 0,
+            valorTotal: 0.00
+        };
+    }
+     acumulador[chave].quantidade++;
+     acumulador[chave].valorTotal += repasse.valor ;
+    
+     return acumulador;
+
+}, {}); 
+
+console.log(`Valor total de repasses por falhas por meio do motivo por órgão:`);
+console.log(valorFalhaPorMotivo);
+
+console.log(`----------------------------------------------------------------`);
+//História de Usuário 3: Estatísticas de Repasses por critérios
