@@ -280,3 +280,31 @@ const dadosRepasse = [
 ];
 
 encontrarMotivoMaisComumComMap(dadosRepasse);
+
+//História de Usuário 4: Apresentação Automática de Detalhes de Transações
+function usuario4(orgaoSelecionado = "Ibama") {
+    
+    const repassesDoOrgao = objetoRepasses.filter (repasse =>
+        repasse.orgao.toLowerCase().includes(orgaoSelecionado.toLowerCase())
+    );
+
+console.log(`Busca automática por: ${orgaoSelecionado}`);
+console.log(`Total de transações encontradas: ${repassesDoOrgao.length}`);
+    
+repassesDoOrgao.forEach((repass, index) => {
+        console.log(`  Transação ${index + 1}:`);
+        console.log(`  Órgão: ${repass.orgao}`);
+        console.log(`  Data: ${repass.data}`);
+        console.log(`  Valor: R$ ${repass.valor.toFixed(2)}`);
+        console.log(`  Status: ${repass.status.toUpperCase()}`);
+        if (repass.motivo) {
+            console.log(`  Motivo: ${repass.motivo}`);
+        } else if (repass.status.toLowerCase() === 'sucesso') {
+             console.log(`  Motivo: N/A (Sucesso)`);
+        }
+        console.log(" ");
+    });
+
+}
+
+usuario4(); 
