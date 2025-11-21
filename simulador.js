@@ -111,3 +111,5 @@ const contagemPorFalhaMotivo = repassesfiltradosComFalhas.reduce((acumulador, re
 
 console.log(`quantidade total de repasses com falha por motivo:`)
 console.log(contagemPorFalhaMotivo);
+
+//d. Valortotal de repasses com falha
