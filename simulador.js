@@ -308,3 +308,51 @@ repassesDoOrgao.forEach((repass, index) => {
 }
 
 usuario4(); 
+
+//História de Usuário 5: Tratamento de erros
+function transacoesInvalidas() {
+    const transacoesInvalidas = dadosRepasse.filter(r => 
+        r.status === "falha" && (!r.motivo || r.motivo.trim() === "")
+    );
+    
+    console.log("Transações sem motivo de falha:");
+    if (transacoesInvalidas.length === 0) {
+        console.log("Nenhuma transação sem motivo de falha encontrada.");
+} else {
+        transacoesInvalidas.forEach((repasse, index) => {
+            console.log(`  Transação inválida ${index + 1}:`);
+            console.log(`  Órgão: ${repasse.orgao}`);
+            console.log(`  Data: ${repasse.data}`);
+            console.log(`  Valor: R$ ${repasse.valor.toFixed(2)}`);
+            console.log(`  Status: ${repasse.status}`);
+            console.log("Sem motivo!");
+    });
+}
+    console.log("");
+    return transacoesInvalidas;
+}
+transacoesInvalidas()
+
+//História de Usuário 6: Ajustes nas estatísticas
+function ajustesNasEstatisticas(){
+    const transacoesInvalidasAjustadas = dadosRepasse.filter(repasse => 
+        (repasse.status.toLowerCase == "falha" && (!repasse.motivo || repasse.motivo.trim == "")
+    ));
+
+    const dadosValidos = dadosRepasse.filter(repasse => 
+        !(repasse.status.toLowerCase == "falha"&& (!repasse.motivo || repasse.motivo.trim() == "")
+    ));
+
+    console.log(`Transações com falhas removidas: ${transacoesInvalidasAjustadas.length}`);
+    console.log(`Total de transações de sucesso: ${dadosValidos.length}`);
+
+    let totalValidoSucesso = dadosValidos.filter(repasse => repasse.status.toLowerCase == "sucesso".length);
+    let totalValidoFalha = dadosValidos.filter(repasse => repasse.status.toLowerCase == "falha".length);
+
+    console.log(`Transações válidas com sucesso: ${totalValidoSucesso.length}`);
+    console.log(`Transações válidas com falha: ${totalValidoFalha.length}`);
+    console.log(`Total geral válidos: ${dadosValidos.length}`);
+
+    return dadosValidos;
+}
+    ajustesNasEstatisticas()
