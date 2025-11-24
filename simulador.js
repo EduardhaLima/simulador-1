@@ -163,6 +163,7 @@ console.log(`Valor total de repasses por falhas por meio do motivo por órgão:`
 console.log(valorFalhaPorMotivo);
 
 console.log(`----------------------------------------------------------------`);
+
 //História de Usuário 3: Estatísticas de Repasses por critérios
 //a. Detalhes do repasse com maior valor
 const repasseComMaiorValor = objetoRepasses.reduce ((max, menor) => menor.valor > max.valor ? menor : max,repassesfiltrados [0]);
