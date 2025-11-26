@@ -250,8 +250,8 @@ const [orgaoMaisRepassesComFalha, maxRepassesOrgaoComFalha] = Array.from(contage
 console.log(`Orgão com mais repasses com falha: ${orgaoMaisRepassesComFalha} (${maxRepassesOrgaoComFalha} repasses)`);
 
 //g. Motivo de falha com mais repasses
-function encontrarMotivoMaisComumComMap(dadosRepasse) {
-    const contagemPorMotivo = dadosRepasse
+function encontrarMotivoMaisComumComMap(objetoRepasses) {
+    const contagemPorMotivo = objetoRepasses
         .filter(repasse => repasse.status === "falha" && repasse.motivo)
         .reduce((mapa, repasse) => {
             const motivo = repasse.motivo;
@@ -336,19 +336,19 @@ transacoesInvalidas()
 
 //História de Usuário 6: Ajustes nas estatísticas
 function ajustesNasEstatisticas(){
-    const transacoesInvalidasAjustadas = dadosRepasse.filter(repasse => 
-        (repasse.status.toLowerCase == "falha" && (!repasse.motivo || repasse.motivo.trim == "")
+    const transacoesInvalidasAjustadas = objetoRepasses.filter(repasse => 
+        (repasse.status.toLowerCase() == "falha" && (!repasse.motivo || repasse.motivo.trim == "")
     ));
 
-    const dadosValidos = dadosRepasse.filter(repasse => 
-        !(repasse.status.toLowerCase == "falha"&& (!repasse.motivo || repasse.motivo.trim() == "")
+    const dadosValidos = objetoRepasses.filter(repasse => 
+        !(repasse.status.toLowerCase() == "falha" && (!repasse.motivo || repasse.motivo.trim() == "")
     ));
 
     console.log(`Transações com falhas removidas: ${transacoesInvalidasAjustadas.length}`);
     console.log(`Total de transações de sucesso: ${dadosValidos.length}`);
 
-    let totalValidoSucesso = dadosValidos.filter(repasse => repasse.status.toLowerCase == "sucesso".length);
-    let totalValidoFalha = dadosValidos.filter(repasse => repasse.status.toLowerCase == "falha".length);
+    let totalValidoSucesso = dadosValidos.filter(repasse => repasse.status.toLowerCase() == "sucesso".length);
+    let totalValidoFalha = dadosValidos.filter(repasse => repasse.status.toLowerCase() == "falha".length);
 
     console.log(`Transações válidas com sucesso: ${totalValidoSucesso.length}`);
     console.log(`Transações válidas com falha: ${totalValidoFalha.length}`);
